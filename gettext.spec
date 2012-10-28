@@ -142,11 +142,11 @@ rm -rf $RPM_BUILD_ROOT
 %postun -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post	libs -p /sbin/ldconfig
-%postun	libs -p /sbin/ldconfig
+%post	libs -p /usr/sbin/ldconfig
+%postun	libs -p /usr/sbin/ldconfig
 
-%post	-n libasprintf -p /sbin/ldconfig
-%postun	-n libasprintf -p /sbin/ldconfig
+%post	-n libasprintf -p /usr/sbin/ldconfig
+%postun	-n libasprintf -p /usr/sbin/ldconfig
 
 %post -n libasprintf-devel	-p	/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
