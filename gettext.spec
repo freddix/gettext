@@ -1,7 +1,7 @@
 Summary:	Utilties for program national language support
 Name:		gettext
 Version:	0.18.1.1
-Release:	6
+Release:	7
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
@@ -136,10 +136,10 @@ rm -f $RPM_BUILD_ROOT%{_infodir}/dir
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/postshell
+%post -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -p /sbin/postshell
+%postun -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post	libs -p /usr/sbin/ldconfig
@@ -148,10 +148,10 @@ rm -rf $RPM_BUILD_ROOT
 %post	-n libasprintf -p /usr/sbin/ldconfig
 %postun	-n libasprintf -p /usr/sbin/ldconfig
 
-%post -n libasprintf-devel	-p	/sbin/postshell
+%post	-n libasprintf-devel -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -n libasprintf-devel	-p	/sbin/postshell
+%postun	-n libasprintf-devel -p /usr/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}-runtime.lang
