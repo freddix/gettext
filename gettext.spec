@@ -1,13 +1,12 @@
 Summary:	Utilties for program national language support
 Name:		gettext
-Version:	0.18.1.1
-Release:	7
+Version:	0.18.2
+Release:	1
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
-# Source0-md5:	3dd55b952826d2b32f51308f2f91aa89
+# Source0-md5:	0c86e5af70c195ab8bd651d17d783928
 Patch0:		%{name}-non_interactive_gettextize.patch
-Patch1:		%{name}-gnulib-gets.patch
 URL:		http://www.gnu.org/software/gettext/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -86,7 +85,6 @@ into the package.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -234,6 +232,6 @@ rm -rf $RPM_BUILD_ROOT
 %files autopoint
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/autopoint
-%{_datadir}/gettext/archive.dir.tar.gz
+%{_datadir}/gettext/archive.dir.tar.xz
 %{_mandir}/man1/autopoint.1*
 
