@@ -1,11 +1,11 @@
 Summary:	Utilties for program national language support
 Name:		gettext
-Version:	0.18.3.1
-Release:	2
+Version:	0.18.3.2
+Release:	1
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
-# Source0-md5:	3fc808f7d25487fc72b5759df7419e02
+# Source0-md5:	241aba309d07aa428252c74b40a818ef
 Patch0:		%{name}-non_interactive_gettextize.patch
 URL:		http://www.gnu.org/software/gettext/
 BuildRequires:	autoconf
