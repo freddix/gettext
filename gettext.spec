@@ -1,11 +1,12 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/gettext.git
 Summary:	Utilties for program national language support
 Name:		gettext
-Version:	0.18.3.2
+Version:	0.19.2
 Release:	1
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
-# Source0-md5:	241aba309d07aa428252c74b40a818ef
+# Source0-md5:	6898a2fc5d711b17278a59cfbfc10bc5
 Patch0:		%{name}-non_interactive_gettextize.patch
 URL:		http://www.gnu.org/software/gettext/
 BuildRequires:	autoconf
@@ -85,6 +86,9 @@ into the package.
 %prep
 %setup -q
 %patch0 -p1
+
+%{__sed} -i -e "s|m4_esyscmd.*|[%{version}],|" \
+    configure.ac gettext-runtime/configure.ac gettext-tools/configure.ac
 
 %build
 %{__libtoolize}
