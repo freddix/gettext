@@ -1,17 +1,18 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/gettext.git
 Summary:	Utilties for program national language support
 Name:		gettext
-Version:	0.19.2
+Version:	0.19.3
 Release:	1
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
-# Source0-md5:	6898a2fc5d711b17278a59cfbfc10bc5
+# Source0-md5:	c365029ffc866fc4e485d9e5ca60b260
 Patch0:		%{name}-non_interactive_gettextize.patch
 URL:		http://www.gnu.org/software/gettext/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	texinfo
 BuildConflicts:	libcroco-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
