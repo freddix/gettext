@@ -1,12 +1,12 @@
 # based on PLD Linux spec git://git.pld-linux.org/packages/gettext.git
 Summary:	Utilties for program national language support
 Name:		gettext
-Version:	0.19.3
+Version:	0.19.4
 Release:	1
 License:	LGPL (runtime), GPL (tools)
 Group:		Development/Tools
 Source0:	ftp://ftp.gnu.org/gnu/gettext/%{name}-%{version}.tar.gz
-# Source0-md5:	c365029ffc866fc4e485d9e5ca60b260
+# Source0-md5:	d3511af1e604a3478900d2c2b4a4a48e
 Patch0:		%{name}-non_interactive_gettextize.patch
 URL:		http://www.gnu.org/software/gettext/
 BuildRequires:	autoconf
